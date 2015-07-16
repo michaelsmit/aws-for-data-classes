@@ -1,35 +1,34 @@
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Action": [
-        "rds:Describe*",
-        "ec2:DescribeAvailabilityZones",
-        "ec2:DescribeVpcs",
-        "cloudwatch:GetMetricStatistics",
-        "cloudwatch:DescribeAlarms",
-        "ec2:DescribeAccountAttributes",
-        "ec2:DescribeSecurityGroups",
-        "sns:ListTopics",
-        "sns:ListSubscriptions"
-      ],
-      "Effect": "Allow",
-      "Resource": "*"
-    }
-  ],
-  "Statement": [
-    {
-      "Action": [
-        "rds:*"
-      ],
-      "Effect": "Allow",
-      "Resource": [
-        "arn:aws:rds:*:822181984661:db:${aws:username}",
-        "arn:aws:rds:*:822181984661:og:default:mysql-5-6",
-        "arn:aws:rds:us-east-1:822181984661:snapshot:*${aws:username}*",
-        "arn:aws:rds:*:822181984661:pg:default.mysql5.6",
-        "arn:aws:rds:*:822181984661:secgrp:default"
-      ]
-    }
-  ]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "rds:Describe*",
+                "ec2:DescribeAvailabilityZones",
+                "ec2:DescribeVpcs",
+                "cloudwatch:GetMetricStatistics",
+                "cloudwatch:DescribeAlarms",
+                "ec2:DescribeAccountAttributes",
+                "ec2:DescribeSecurityGroups",
+                "sns:ListTopics",
+                "sns:ListSubscriptions"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "rds:*"
+            ],
+            "Resource": [
+                "arn:aws:rds:us-east-1:092841396837:db:${aws:username}",
+                "arn:aws:rds:us-east-1:092841396837:og:default:mysql-5-6",
+                "arn:aws:rds:us-east-1:092841396837:snapshot:*${aws:username}*",
+                "arn:aws:rds:us-east-1:092841396837:pg:default.mysql5.6",
+                "arn:aws:rds:us-east-1:092841396837:secgrp:default",
+                "arn:aws:rds:us-east-1:092841396837:subgrp:default"
+            ]
+        }
+    ]
 }
